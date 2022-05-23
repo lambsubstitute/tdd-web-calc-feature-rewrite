@@ -118,7 +118,7 @@ python3 -m pytest
 
 *You do not need to follow this section if you only want to play with TDD for Python*
 
-This repo is intended to aide in TDD for the Python backend app. But in the event you want to make changes to the frontend web application you can also do that but there are a few extra details you will need to know.
+This repo is intended to aide in TDD for the Python backend app. But in the event you want to make changes to the frontend web application you can, but there are a few extra details you will need to know.
 
 ### Styling
 
