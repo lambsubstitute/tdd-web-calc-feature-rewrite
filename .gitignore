@@ -1,0 +1,10 @@
+# Python
+__pycache__
+.pyc
+
+# NPM/TailwindCSS
+node_modules
+package-lock.json
+
+~BROMIUM
+.vscode

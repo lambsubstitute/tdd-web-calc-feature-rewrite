@@ -1,0 +1,20 @@
+{
+  "name": "tdd-web-calc",
+  "description": "Basic calculator web app to demonstrate TDD",
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  },
+  "scripts": {
+    "run": "python3 ./app/app.py",
+    "build": "npx tailwindcss -i ./src/input.css -o ./src/static/css/output.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kierenhamps/tdd-web-calc.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/kierenhamps/tdd-web-calc/issues"
+  },
+  "homepage": "https://github.com/kierenhamps/tdd-web-calc"
+}

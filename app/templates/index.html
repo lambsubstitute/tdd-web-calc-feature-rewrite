@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TDD Web Calculator</title>
+        <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/b9280286e3.js" crossorigin="anonymous"></script>
+        <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/webcalc.js') }}"></script>
+    </head>
+    <body class="from-teal-600 bg-gradient-to-br to-teal-700 h-[100vh]">
+        <h1 class="p-10 pb-5 font-regular text-center text-4xl uppercase">TDD Web Calculator</h1>
+        <div class="grid grid-cols-1 drop-shadow-2xl max-w-lg m-auto p-6">
+            <div class="bg-teal-5 ">
+                <div id="calculation" class="bg-slate-200 p-4 pb-0 rounded-t-md col-span-4 text-right text-sm h-4">Connecting to websocket...</div>
+                <div id="value" class="bg-slate-200 p-4 col-span-4 text-right text-5xl h-20 overflow-clip"></div>
+            </div>
+            <div class="grid grid-cols-4 text-4xl">
+                <div id="clear" class="select-none bg-slate-300 hover:bg-slate-500 active:bg-teal-600 p-4 border-solid border-t-2 border-gray-400 text-center text-slate-700 h-[72px]"><i class="fa-solid fa-c fa-sm">&#67;</i></div>
+                <div id="sign" class="select-none bg-slate-300 hover:bg-slate-500 active:bg-teal-600 p-4 border-solid border-t-2 border-gray-400 text-center text-slate-700 h-[72px]"><i class="fa-solid fa-plus-minus fa-sm">&#177;</i></div>
+                <div id="percent" class="select-none bg-slate-300 hover:bg-slate-500 active:bg-teal-600 p-4 border-solid border-t-2 border-gray-400 text-center text-slate-700 h-[72px]"><i class="fa-solid fa-percent fa-sm">&#37;</i></div>
+                <div id="divide" class="select-none bg-slate-600 hover:bg-slate-700 active:bg-teal-700 p-4 border-solid border-t-2 border-gray-400 text-center text-teal-400 h-[72px]"><i class="fa-solid fa-divide fa-sm">&#247;</i></div>
+                <div id="seven" class="select-none bg-slate-200 hover:bg-slate-500 active:bg-teal-600 p-4 text-center text-slate-800">7</div>
+                <div id="eight" class="select-none bg-slate-200 hover:bg-slate-500 active:bg-teal-600 p-4 text-center text-slate-800">8</div>
+                <div id="nine" class="select-none bg-slate-200 hover:bg-slate-500 active:bg-teal-600 p-4 text-center text-slate-800">9</div>
+                <div id="multiply" class="select-none bg-slate-600 hover:bg-slate-700 active:bg-teal-700 p-4 text-center text-teal-400"><i class="fa-solid fa-multiply fa-sm">x</i></div>
+                <div id="four" class="select-none bg-slate-200 hover:bg-slate-500 active:bg-teal-600 p-4 text-center text-slate-800">4</div>
+                <div id="five" class="select-none bg-slate-200 hover:bg-slate-500 active:bg-teal-600 p-4 text-center text-slate-800">5</div>
+                <div id="six" class="select-none bg-slate-200 hover:bg-slate-500 active:bg-teal-600 p-4 text-center text-slate-800">6</div>
+                <div id="subtract" class="select-none bg-slate-600 hover:bg-slate-700 active:bg-teal-700 p-4 text-center text-teal-400"><i class="fa-solid fa-minus fa-sm">-</i></div>
+                <div id="one" class="select-none bg-slate-200 hover:bg-slate-500 active:bg-teal-600 p-4 text-center text-slate-800">1</div>
+                <div id="two" class="select-none bg-slate-200 hover:bg-slate-500 active:bg-teal-600 p-4 text-center text-slate-800">2</div>
+                <div id="three" class="select-none bg-slate-200 hover:bg-slate-500 active:bg-teal-600 p-4 text-center text-slate-800">3</div>
+                <div id="add" class="select-none bg-slate-600 hover:bg-slate-700 active:bg-teal-700 p-4 text-center text-teal-400"><i class="fa-solid fa-plus fa-sm">&#43;</i></div>
+                <div id="zero" class="select-none col-span-2 bg-slate-200 hover:bg-slate-500 active:bg-teal-600 p-4 rounded-bl-md text-center text-slate-800">0</div>
+                <div id="decimalplace" class="select-none bg-slate-200 hover:bg-slate-500 active:bg-teal-600 p-4 text-center text-slate-800">.</div>
+                <div id="equals" class="select-none bg-teal-400 hover:bg-teal-500 active:bg-green-400 p-4 rounded-br-md text-center text-slate-600"><i class="fa-solid fa-equals fa-sm">&#61;</i></div>
+            </div>
+            <div id="error" class="mt-6 p-6 bg-teal-400 rounded-lg drop-shadow-2xl text-right text-red-600 text-lg font-bold hidden"></div>
+        </div>
+    </body>
+</html>
