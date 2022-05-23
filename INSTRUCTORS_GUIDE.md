@@ -100,6 +100,8 @@ class Calculator():
 
 **Observation:** <span style="color:green">The calculator initialised to 0</span>
 
+**BONUS Observation:** View the web app and observe that it is displaying a "0"
+
 ---  
 **Refactoring:**  
 > No refactoring required
@@ -224,6 +226,10 @@ def test_calculator_should_concatinate_2_numbers():
 **Action:** Run the tests  
 **Observation:** <span style="color:gren">All tests successful</span>  
 > <span style="color:lightblue">tests/test_calculator.py </span><span style="color:green">..</span>
+
+---
+**BONUS Action:** Use the webapp and enter '42='  
+**BONUS Observation:** Look in the python terminal and observe the reduced output of the calculation.
 
 ---
 **Refactoring:**  
@@ -387,7 +393,7 @@ def test_calculator_should_concatinate_numbers_without_leading_zeros(calculator)
 
 **Action:** Run the tests  
 **Observation:** <span style="color:green">Tests are sucessful</span>
-> <span style="color:lightblue">tests/test_calculator.py </span><span style="color:green">...</span>
+> <span style="color:lightblue">tests/test_calculator.py </span><span style="color:green">....</span>
 
 ---
 **Refactoring**:
@@ -467,13 +473,13 @@ def test_calculator_should_add_2_numbers_together(calculator):
             return first_item
 ```
 
-> This function recurses (it calls itself over and over) until the calculation is complete (or we hit an error)
-> It is given a list of the calculation to perform
-> It first works out how many parts of the calculation are given
-> Then it works out what the operator is (the `second_item`)
-> And calculates the sum of the numbers
-> If there is more work left to do in the calculation then it creates a new calculation with the summed part and the remainder of the calcualtion
-> If there is no more work left to do then just return the sum.
+> This function recurses (it calls itself over and over) until the calculation is complete (or we hit an error)  
+> It is given a list of the calculation to perform  
+> It first works out how many parts of the calculation are given  
+> Then it works out what the operator is (the `second_item`)  
+> And calculates the sum of the numbers  
+> If there is more work left to do in the calculation then it creates a new calculation with the summed part and the remainder of the calcualtion  
+> If there is no more work left to do then just return the sum.  
 
 **Action:** Add to the `parse` function to call the new `calculate` function  
 **Code:**  
@@ -485,3 +491,30 @@ def test_calculator_should_add_2_numbers_together(calculator):
         # Answer is now available in self.value
         print(f"Answer is: {self.value}")
 ```
+
+**Action:** Run the tests  
+**Observation:** <span style="color:green">Tests are sucessful</span>
+> <span style="color:lightblue">tests/test_calculator.py </span><span style="color:green">.....</span>
+
+---  
+**BONUS Action:** Use the web app to enter a long calculation of additions. For example "22+3+5+123+55+2=".  
+**BONUS Observation:** Observe that the correct answer is diplayed.  
+**BONUS Observation:** Look in the python terminal and observe the way the reduced calculation recurses down to the answer.  
+
+--- 
+**BONUS Action:** Use the web app to enter a calculation with an addition and another operator. For example "2+2-6="  
+**BONUS Observation:** Notice that the answer `null` is displayed.  
+**BONUS Observation:** Look in the python terminal and observe the way the calculation was reduced and recursed over the addition and failed when it encountered the unimplemented operator.
+
+---
+
+This is the end of the instructor guide. If followed through to this point the code will be in the same state as you will find in the main branch of this repo.
+
+Can you take this further, using TDD to implement more features?
+
+Examples of missing features can be:
+
+- `-`, `*`, `/`
+- `%`
+- Negative numbers
+- Error handling
