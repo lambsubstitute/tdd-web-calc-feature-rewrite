@@ -61,8 +61,7 @@ To start coding you will need a few basics setup first
 
 You will need the following software in order to run and develop the Python code:
 
-[Please follow the official docs for each pre-req as required on how to
-install for your environment.]{.title-ref}
+Please follow the official docs for each pre-req as required on how to install for your environment.
 
   * [VSCode](https://code.visualstudio.com/) or another IDE of your choice
   * [Python](https://www.python.org/downloads) (with pip)
@@ -70,12 +69,12 @@ install for your environment.]{.title-ref}
 
 We then need some additional packages required for this app.
 
-It is recommended to install python requirements inside a virtual env (See []()) but this is outside the scope of this repo.
+It is recommended to install python requirements inside a virtual env (See [python documentation](https://docs.python.org/3/tutorial/venv.html) for more information) but this is outside the scope of this repo.
 
 Install the requirements:
 
 ```bash
-    pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Running Locally
@@ -86,7 +85,7 @@ locally to interact with the web app.
 Navigate to the repo:
 
 ```bash
-    cd tdd-web-calc
+cd tdd-web-calc
 ```
 
 *If you are using a virtual environment remember to switch to it*
@@ -94,7 +93,7 @@ Navigate to the repo:
 And run the local server:
 
 ```bash
-    python3 ./app/app.py
+python3 ./app/app.py
 ```
 
 A message will show you the status of the run and a URL to see the app. [http://127.0.0.1:5000](http://127.0.0.1:5000)
@@ -112,7 +111,7 @@ The tests for the `Calculator` class should live in the `tests/test_calculator.p
 To run the test:
 
 ```bash
-    python3 -m pytest
+python3 -m pytest
 ```
 
 ## Developing the Web Page
