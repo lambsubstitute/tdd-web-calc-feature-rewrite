@@ -132,8 +132,8 @@ To change these styles you will need to have installed.
 Once you have these installed you will need to run the following to install some more requirements:
 
 ```bash
-    cd tdd-web-calc
-    npm install
+cd tdd-web-calc
+npm install
 ```
 
 These extra packages allow you to recompile the `app/static/css/output.css` stylesheet that is used to style and format the web application.
@@ -143,13 +143,13 @@ To recompile the `output.css` stylesheet run:
 For Windows:
 
 ```bash
-    npx tailwindcss -i .\src\input.css -o .\src\static\css\output.css --watch     <<-- For Windows
+npx tailwindcss -i .\src\input.css -o .\src\static\css\output.css --watch     <<-- For Windows
 ```
 
 For Linux:
 
 ```bash
-    npx tailwindcss -i ./src/input.css -o ./src/static/css/output.css --watch     <<-- For Linux/MacOS
+npx tailwindcss -i ./src/input.css -o ./src/static/css/output.css --watch     <<-- For Linux/MacOS
 ```
 
 ### Web Page
