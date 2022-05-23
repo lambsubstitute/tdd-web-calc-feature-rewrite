@@ -143,13 +143,13 @@ To recompile the `output.css` stylesheet run:
 For Windows:
 
 ```bash
-npx tailwindcss -i .\src\input.css -o .\src\static\css\output.css --watch     <<-- For Windows
+npx tailwindcss -i .\src\input.css -o .\src\static\css\output.css --watch
 ```
 
 For Linux:
 
 ```bash
-npx tailwindcss -i ./src/input.css -o ./src/static/css/output.css --watch     <<-- For Linux/MacOS
+npx tailwindcss -i ./src/input.css -o ./src/static/css/output.css --watch
 ```
 
 ### Web Page
