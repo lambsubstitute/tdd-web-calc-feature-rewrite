@@ -35,8 +35,7 @@ We will be creating a new class called `Calculator` with the following methods a
 
   * **`Calculator.value:`** A Variable that stores the value of the calculation to display on the calculator.  
   * **`Calculator.calculation:`** A Variable that stores the reduced calculation for processing  
-  * **`Calculator.parse():`** A Function that takes a stream of inputs in the form of a list and sets the value to the resulting value of the calculation.  
-  * **`Calculator.reduce():`** A Function that takes a stream of inputs in the form of a list and returns a list of operations and numbers condensed.  
+  * **`Calculator.parse():`** A Function that takes a stream of inputs in the form of a list, reduces it down to numbers and operators and sets the value to the resulting value of the calculation.  
   * **`Calculator.calculate():`** A Function that takes a reduced list of numbers and operations and returns the resulting value of the calculation.  
 
 A web front end is provided to support the interractions with the `Calculator` class and expects the names of the variables and functions above in order to function.  
