@@ -26,6 +26,7 @@ The webapp can be opened after running the application by navigating in a web br
 [Step 1 - Initialising The Calculator](#step1)  
 [Step 2 - Reducing The Calculator](#step2)  
 [Step 3 - Implementing the addition operator](#step3)  
+[Cleanup](#cleanup)  
 
 ## Overview
 
@@ -517,3 +518,12 @@ Examples of missing features can be:
 - `%`
 - Negative numbers
 - Error handling
+
+---
+
+## Cleaup
+
+To return this repo to its empty state:  
+
+  * Delete the `tests` folder.
+  * Clean out the `app/calculator.py` file so it is empty.
