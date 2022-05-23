@@ -166,7 +166,7 @@ The script components of the web page can be changed but the socketio scripts mu
 
 This is also true for the buttons of the calculator. They can be changed into anything you like but there must exist components with the same id's so that the calculator can send messages back to the backend.
 
-Changes to the `index.html` page can be seen by reloading the web browser of a running instance.
+*Changes to the `index.html` page can be seen by reloading the web browser of a running instance.*
 
 ### Javascript
 
@@ -174,7 +174,7 @@ The Web page functionality is provided by a simple javascript file `app/static/j
 
 In this you will find the functions used to monitor for button clicks and the use of socketio to send web socket messages to the backend.
 
-Changes to this can be seen by reloading the web browser of a running instance.
+*Changes to this can be seen by reloading the web browser of a running instance.*
 
 License
 -------
