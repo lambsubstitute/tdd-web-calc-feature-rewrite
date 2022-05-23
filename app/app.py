@@ -67,14 +67,13 @@ def command(command):
         print(f"Calculating answer for: {calculation}")
         try:
             calc.parse(calculation)
+            send(calc.value, " ".join([str(x) for x in calc.calculation]))
             session["calculation"] = []
         except Exception as e:
             send(calc.value, "", error=str(e))
             print(str(e))
             session["calculation"] = []
             return
-
-    send(calc.value, "")
 
 
 ### Helper functions

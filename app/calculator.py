@@ -34,3 +34,38 @@ class Calculator:
                 temp_value = None
 
         print(f"Reduces to: {self.calculation}")
+
+        # Recurse over calculation and workout answer
+        self.value = self.calculate(self.calculation)
+
+        # Answer is now available in self.value
+        print(f"Answer is: {self.value}")
+
+    def calculate(self, calculation):
+        """
+        Calculate the result of a list of numbers and operators.
+        This is a recursive function
+        """
+        # Work out the inputs
+        if len(calculation) > 0:
+            first_item = calculation[0]
+        if len(calculation) > 1:
+            second_item = calculation[1]
+        if len(calculation) > 2:
+            third_item = calculation[2]
+        if len(calculation) > 3:
+            remainder = calculation[3:]
+
+        if second_item == "+":
+            # Addition
+            sum = first_item + third_item
+
+            if len(calculation) > 3:
+                remainder.insert(0, sum)
+                print(remainder)
+                return self.calculate(remainder)
+            else:
+                return sum
+
+        if second_item == "=":
+            return first_item
