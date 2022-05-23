@@ -41,8 +41,6 @@ We will be creating a new class called `Calculator` with the following methods a
 
 A web front end is provided to support the interractions with the `Calculator` class and expects the names of the variables and functions above in order to function.  
 
-When you see `...` in the code snipets, it means there is existing code not displayed in the snippet.  
-
 <div name="step1"></div>
 
 ## Step 1 - Initialising the Calculator
@@ -92,8 +90,6 @@ class Calculator():
 **Action:** Add an initialisation function on the Calculator class  
 **Code:** *Inside the Calculator class*  
 ``` python
-    ...
-
     def __init__(self):
         self.value = 0
 ```
@@ -108,19 +104,7 @@ class Calculator():
 **Refactoring:**  
 > No refactoring required
 
----
-**Completed Calculator Class:**  
-
-``` python
-class Calculator():
-    """
-    A Calculator!
-    """
-
-    def __init__(self):
-        self.value = 0
-```
-
+---  
 **Completed Test Code:**  
 
 ``` python
@@ -134,6 +118,18 @@ def test_calculator_should_zero_on_initialise():
     """
     calculator = Calculator()
     assert calculator.value is 0
+```
+
+**Completed Calculator Class:**  
+
+``` python
+class Calculator():
+    """
+    This is the main class to implement the Calculator
+    """
+
+    def __init__(self):
+        self.value = 0
 ```
 
 ---  
@@ -155,8 +151,6 @@ To calculate the input stream we need to reduce the calculation down into number
 **Test Code:**  
 
 ``` python
-...
-
 def test_calculator_should_concatinate_2_numbers():
     """
     Given I have an initialised calculator
@@ -166,7 +160,7 @@ def test_calculator_should_concatinate_2_numbers():
     calculator = Calculator()
     calculation = [1, 2, "="]
     calculator.parse(calculation)
-    assert calculator.calculation is [12, "="]
+    assert calculator.calculation == [12, "="]
 ```
 
 **Action:** Run the tests  
@@ -181,8 +175,6 @@ def test_calculator_should_concatinate_2_numbers():
 **Code:** *Inside the Calculator class*  
 
 ``` python
-    ...
-
     def parse(self, calculation):
         """
         parse is a function that takes a list of numbers and operators and
@@ -201,8 +193,6 @@ def test_calculator_should_concatinate_2_numbers():
 **Code:** *Inside the Calculator Class, parse function*  
 
 ``` python
-        ...
-
         # First pass reduce the numbers
         self.calculation = []
         temp_value = None
@@ -244,14 +234,10 @@ def test_calculator_should_concatinate_2_numbers():
 **Test Code:** *Added before the fist test, but after the imports*  
 
 ``` python
-...
-
 @pytest.fixture
 def calculator():
     calculator = Calculator()
     return calculator
-
-...
 ```
 
 > We can now use this fixture in our existing tests by adding `calculator` to our test parameters  
@@ -259,13 +245,11 @@ def calculator():
 **Test Code:** *Just changing the `def <function>` lines of our existing tests*  
 
 ``` python
-...
-
 def test_calculator_should_zero_on_initialise(calculator):
-    ...
+```
 
+``` python
 def test_calculator_should_concatinate_2_numbers(calculator):
-    ...
 ```
 
 > And we can now remove all existing intitialisations of the calculator in
@@ -313,7 +297,7 @@ def test_calculator_should_concatinate_2_numbers(calculator):
 ### Calculator
 class Calculator():
     """
-    A Calculator!
+    This is the main class to implement the Calculator
     """
 
     def __init__(self):
@@ -356,14 +340,60 @@ class Calculator():
   * When I enter 3 numbers
   * Then I want these numbers to be concatinated
 
+---
+***Test Code:**  
 
+``` python
+def test_calculator_should_concatinate_3_numbers(calculator):
+    """
+    Given I have an initialised calculator
+    When I enter 3 numbers
+    Then I want these numbers to be concatinated
+    """
+    calculation = [1, 2, 3, "="]
+    calculator.parse(calculation)
+    assert calculator.calculation == [123, "="]
+```
+
+**Action:** Run the tests  
+**Observation:** <span style="color:green">Tests are sucessful</span>
+> <span style="color:lightblue">tests/test_calculator.py </span><span style="color:green">...</span>
+
+---
+**Refactoring**:
+> No refactoring required
+
+---
 **The Task:**  
 * Given I have an initialised calculator
 * When I enter several numbers with multiple zeros at the beginning
 * Then I want these numbers to be concatinated without the leading zeros
 
-<br/>
+---  
+**Test Code:** 
 
+``` python
+def test_calculator_should_concatinate_numbers_without_leading_zeros(calculator):
+    """
+    Given I have an initialised calculator
+    When I enter 3 numbers
+    Then I want these numbers to be concatinated
+    """
+    calculation = [0, 0, 0, 0, 1, 2, 3, "="]
+    calculator.parse(calculation)
+    assert calculator.calculation == [123, "="]
+```
+
+
+**Action:** Run the tests  
+**Observation:** <span style="color:green">Tests are sucessful</span>
+> <span style="color:lightblue">tests/test_calculator.py </span><span style="color:green">...</span>
+
+---
+**Refactoring**:
+> No refactoring required
+
+---  
 <div name="step3"></div>
 
 ### Step 3 - Implementing the addition operator  
