@@ -365,9 +365,9 @@ def test_calculator_should_concatinate_3_numbers(calculator):
 
 ---
 **The Task:**  
-* Given I have an initialised calculator
-* When I enter several numbers with multiple zeros at the beginning
-* Then I want these numbers to be concatinated without the leading zeros
+  * Given I have an initialised calculator
+  * When I enter several numbers with multiple zeros at the beginning
+  * Then I want these numbers to be concatinated without the leading zeros
 
 ---  
 **Test Code:** 
@@ -398,6 +398,90 @@ def test_calculator_should_concatinate_numbers_without_leading_zeros(calculator)
 
 ### Step 3 - Implementing the addition operator  
 
-**Action:** Using the webapp enter a calculation and finish with \"=\"  
-**Observation:** An error occurs  
-> 'Calculator' object has no attribute 'parse'
+**Action:** Using the webapp enter "2+2" and finish with "="  
+**Observation:** The resulting calculation is not displayed. It still shows a "0".
+
+**The Task:**  
+We now want to take the reduced calculation and work out the result for addition.  
+  * Given I have an intialised calculator  
+  * When I enter 2 numbers with a plus between them  
+  * Then I want these number to be added  
+
+---  
+**Test Code:**  
+
+``` python
+def test_calculator_should_add_2_numbers_together(calculator):
+    """
+    Given I have an intialised calculator
+    When I enter 2 numbers with a plus between them
+    Then I want these number to be added
+    """
+    calculation = [1, "+", 2, "="]
+    calculator.parse(calculation)
+    assert calculator.value is 3
+```
+
+**Action:** Run the tests  
+**Observation:** <span style="color:red">Test failed</span>  
+> <span style="color:red">assert 0 is 3</span>
+
+> We expected a **3** but got a **0**
+
+---  
+**BONUS Action:** Use the web app to enter "2+2="  
+**BONUS Observation:** Notice the result stays as a "0"
+
+---  
+**Action:** Add a new function to calculate the answer  
+**Code:**  
+
+``` python
+    def calculate(self, calculation):
+        """
+        Calculate the result of a list of numbers and operators.
+        This is a recursive function
+        """
+        # Work out the inputs
+        if len(calculation) > 0:
+            first_item = calculation[0]
+        if len(calculation) > 1:
+            second_item = calculation[1]
+        if len(calculation) > 2:
+            third_item = calculation[2]
+        if len(calculation) > 3:
+            remainder = calculation[3:]
+
+        if second_item == "+":
+            # Addition
+            sum = first_item + third_item
+
+            if len(calculation) > 3:
+                remainder.insert(0, sum)
+                print(remainder)
+                return self.calculate(remainder)
+            else:
+                return sum
+
+        if second_item == "=":
+            return first_item
+```
+
+> This function recurses (it calls itself over and over) until the calculation is complete (or we hit an error)
+> It is given a list of the calculation to perform
+> It first works out how many parts of the calculation are given
+> Then it works out what the operator is (the `second_item`)
+> And calculates the sum of the numbers
+> If there is more work left to do in the calculation then it creates a new calculation with the summed part and the remainder of the calcualtion
+> If there is no more work left to do then just return the sum.
+
+**Action:** Add to the `parse` function to call the new `calculate` function  
+**Code:**  
+
+``` python
+        # Recurse over calculation and workout answer
+        self.value = self.calculate(self.calculation)
+
+        # Answer is now available in self.value
+        print(f"Answer is: {self.value}")
+```
