@@ -1,7 +1,6 @@
 [![Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg)](COPYING)
 
-
 # TDD Web Calculator
 
 🏫 For educational purposes 🏫

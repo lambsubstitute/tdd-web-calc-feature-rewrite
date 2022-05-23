@@ -5,7 +5,6 @@ from flask import Flask, render_template, session
 from flask_socketio import SocketIO, emit
 from threading import Lock
 
-
 import calculator
 
 async_mode = None
