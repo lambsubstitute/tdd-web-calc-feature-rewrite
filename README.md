@@ -143,14 +143,16 @@ To recompile the `output.css` stylesheet run:
 For Windows:
 
 ```bash
-npx tailwindcss -i .\src\input.css -o .\src\static\css\output.css --watch
+npx tailwindcss -i .\src\input.css -o .\src\static\css\output.css
 ```
 
 For Linux:
 
 ```bash
-npx tailwindcss -i ./src/input.css -o ./src/static/css/output.css --watch
+npx tailwindcss -i ./src/input.css -o ./src/static/css/output.css
 ```
+
+*If you add `--watch` to the end of the command, tailwind will continue to run and watch for changes. It will then recompile the css everytiume you save a change to the html classes*
 
 ### Web Page
 
