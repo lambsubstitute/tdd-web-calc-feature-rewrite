@@ -521,7 +521,7 @@ Examples of missing features can be:
 
 ---
 
-## Cleaup
+## Cleanup
 
 To return this repo to its empty state:  
 
