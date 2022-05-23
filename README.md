@@ -100,7 +100,7 @@ A message will show you the status of the run and a URL to see the app. [http://
 
 *This is run in debug mode so any changes to the app will live reload the web application.*
 
-Note: This will not show changes to any css parameters in the html file. See [Developing the Web page](#developing-the-web-page) for more information on how to do this.
+*Note: This will not show changes to any css parameters in the html file. See [Developing the Web page](#developing-the-web-page) for more information on how to do this.*
 
 ### Running the Tests
 
