@@ -108,7 +108,7 @@ Tests are saved under the `tests` directory
 
 The tests for the `Calculator` class should live in the `tests/test_calculator.py` file.
 
-To run the test:
+To run the tests:
 
 ```bash
 python3 -m pytest
