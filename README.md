@@ -124,7 +124,7 @@ This repo is intended to aide in TDD for the Python backend app. But in the even
 
 To change the style of the web app we use [TailwindCSS](https://tailwindcss.com).
 
-To change these styles you will need.
+To change these styles you will need to have installed.
 
 -   [NodeJS](https://nodejs.org/en/download/)
 -   [TailwindCSS CLI](https://tailwindcss.com/docs/installation)
