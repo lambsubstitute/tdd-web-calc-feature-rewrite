@@ -5,7 +5,7 @@
 
 🏫 For educational purposes 🏫
 
-![Picture of the TDD Web Calculator skeleton](images/tdd-web-calc-skeleton.png){width="400px"}
+![Picture of the TDD Web Calculator skeleton](images/tdd-web-calc-skeleton.png)
 
 *Learn and practice Test Driven Development in Python to create a Web app calculator.*
 
