@@ -26,10 +26,10 @@ The `main` branch contains a minimal set of tests and code to provide the featur
   
 It can be used as a starting point for learning and practicing TDD. 
 
-> What features are missing?
-> ...
-> How would you go about writing a test and the code for these missing features?
-> ...
+> What features are missing?  
+> ...  
+> How would you go about writing a test and the code for these missing features?  
+> ...  
 
 ### The instructor branch
 
