@@ -67,6 +67,7 @@ def command(command):
         print(f"Calculating answer for: {calculation}")
         try:
             calc.parse(calculation)
+            session["calculation"] = []
         except Exception as e:
             send(calc.value, "", error=str(e))
             print(str(e))
