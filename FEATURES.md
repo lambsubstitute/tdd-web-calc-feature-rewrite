@@ -25,9 +25,9 @@ Examples: <br>
 
 ---
 Scenario Outline: Can add two numbers together <br>
-  - Given I have intialised calculator  <br>
-  - When I add the two numbers "a" and "b" together  <br>
-  - Then The correct "addition_result" should be shown  <br>
+- Given I have intialised calculator  <br>
+- When I add the two numbers "a" and "b" together  <br>
+- Then The correct "addition_result" should be shown  <br>
 Examples:  <br>
    - |a  |b  |addition_result|  <br>
    - |1  |1  |2              |  <br>
